@@ -1,18 +1,30 @@
-/***** Category pages *****/
+/***** Category (FAQ listing) pages *****/
 .category {
   &-container {
-    display: flex;
-    justify-content: flex-end;
+    display: block;
   }
 
   &-content {
-    @include desktop {
-      flex: 0 0 80%;
-    }
-
-    flex: 1;
+    width: 100%;
     max-width: 100%;
   }
+}
+
+.category-sub-nav {
+  align-items: flex-start;
+
+  .category-sub-nav-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.category-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111827;
+  margin: 12px 0 0;
 }
 
 .section-tree {
@@ -21,35 +33,70 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 10px 64px;
 
   .section {
-    @include tablet { flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */ }
+    @include tablet { flex: 0 0 45%; }
     flex: initial;
     max-width: 100%;
   }
 
   &-title {
-    margin-bottom: 0;
-    font-size: 18px;
-    font-weight: $font-weight-semibold;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 700;
 
-    a { color: $text_color; }
+    a {
+      color: #212326;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
   }
 
   .see-all-articles {
-    display: block;
-    padding: 15px 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 0 0;
+    font-size: 16px;
+    color: #212326;
+    text-decoration: none;
+
+    &::before {
+      content: ">";
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 }
 
 .article-list {
   &-item {
-    font-size: $font-size-bigger;
-    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px 0;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
 
-    a { color: $text_color; }
+    a {
+      color: #212326;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: #111827;
+      }
+    }
   }
 }
 

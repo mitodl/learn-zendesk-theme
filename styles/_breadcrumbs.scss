@@ -14,10 +14,13 @@
     max-width: 450px;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
 
     + li::before {
       content: ">";
       margin: 0 4px;
+      flex-shrink: 0;
     }
 
     a:visited {
