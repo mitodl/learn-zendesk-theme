@@ -7,9 +7,17 @@
   max-width: 100%;
   box-sizing: border-box;
 
+  @include mobile {
+    padding: 40px 20px;
+  }
+
   &-container {
     position: relative;
     padding-bottom: 80px;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
     
     &::before {
       content: '';
@@ -49,6 +57,10 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+
+    @include mobile {
+      gap: 24px;
+    }
   }
 
   &-content {
@@ -64,6 +76,10 @@
     color: #212326;
     margin: 0;
     line-height: 1.2;
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
   
   &-subtitle {
@@ -72,6 +88,10 @@
     color: #212326;
     margin: 0;
     line-height: 1.5;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
   
   &-search {

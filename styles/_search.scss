@@ -45,6 +45,11 @@ $padding-right: 20px;
     flex: none;
     order: 1;
     flex-grow: 0;
+
+    @include mobile {
+      height: 56px;
+      padding: 0px 16px;
+    }
     
     // Reset default search styles
     border-color: #B8C2CC;
