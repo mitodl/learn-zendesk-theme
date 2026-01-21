@@ -17,6 +17,7 @@
   &-container {
     @include desktop {
       flex-direction: row;
+      gap: 50px;
     }
 
     display: flex;
@@ -47,9 +48,13 @@
   }
 
   &-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #212326;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+    margin-bottom: 0px;
 
     @include tablet {
       flex-basis: 100%; /* Take entire row */
@@ -77,6 +82,17 @@
   &-meta {
     display: inline-block;
     vertical-align: middle;
+
+    .meta-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .meta-data {
+      font-size: 14px;
+      color: #212326;
+    }
   }
 
   &-body {
@@ -117,9 +133,9 @@
   &-sidebar {
     @include desktop {
       border: 0;
-      flex: 0 0 17%;
+      flex: 0 0 24%;
       height: auto;
-      max-width: 17%;
+      max-width: 24%;
     }
 
     border-bottom: 1px solid $low-contrast-border-color;
@@ -134,7 +150,7 @@
       flex-direction: row;
     }
 
-    border-top: 1px solid $low-contrast-border-color;
+    border-top: 1px solid #DDE1E6;
     display: flex;
     flex-direction: column;
     padding: 20px 0;
@@ -156,27 +172,71 @@
   }
 
   &-votes {
-    border-top: 1px solid $low-contrast-border-color;
+    border-top: 1px solid #DDE1E6;
     padding: 30px 0;
-    text-align: center;
+    text-align: left;
 
     &-question { // Explicit values for rendering h2 like a span for accessibility.
       font-size: $font-size-base;
-      font-weight: normal;
-      margin-bottom: 0;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #212326;
+    }
+
+    &-controls {
+      display: flex;
+      gap: 16px;
     }
   }
 
   &-vote {
-    margin: 10px 5px;
-    min-width: 90px;
+    margin: 0;
+    min-width: auto;
     width: auto;
+    padding: 0px 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #B8C2CC;
+    color: #626A73;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #E5E7EB;
+      color: #212326;
+    }
+
+    &[data-selected="true"],
+    &.button-primary {
+      background-color: #A31F34;
+      border-color: #A31F34;
+      color: #FFFFFF;
+    }
+  }
+
+  &-votes-count {
+    font-size: 12px;
+    color: #626A73;
+    display: block;
+    margin-top: 16px;
   }
 
   &-more-questions {
-    margin: 10px 0 20px;
-    text-align: center;
-    @include standalone-link;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 18px;
+    color: #212326;
+    
+    a {
+      font-size: 16px;
+      text-decoration: underline;
+      color: #212326;
+
+      &:visited {
+        color: #212326;
+      }
+    }
   }
 
   &-return-to-top {
@@ -222,27 +282,114 @@
 
 .sidenav {
   &-title {
-    font-size: $font-size-base;
+    font-size: 24px;
+    font-weight: 700;
+    color: #212326;
     position: relative;
-    font-weight: 600;
+    margin-bottom: 16px;
   }
 
   &-item {
     display: block;
-    margin-top: 10px;
-    margin-bottom: 16px;
+    padding: 8px 0px;
+    margin: 4px 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #212326;
+    text-decoration: none;
+    border-radius: 4px 0 0 4px;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #F3F4F8;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #212326;
+    }
+
+    &.current-article {
+      background-color: #A31F34;
+      color: #FFFFFF;
+      font-weight: 500;
+      padding: 8px 12px;
+
+      &:hover {
+        background-color: #A31F34;
+        color: #FFFFFF;
+      }
+
+      &:visited {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.collapsible-sidebar-body {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+}
+
+.article-sidebar-see-all {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 8px 0 0;
+  font-size: 16px;
+  color: #212326;
+  text-decoration: none;
+
+  &::before {
+    content: ">";
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: #212326;
   }
 }
 
 .recent-articles,
 .related-articles {
   &-title {
-    @extend .comment-heading;
+    font-size: 24px;
+    font-weight: 700;
+    color: #212326;
+    margin-bottom: 16px;
   }
 
   li {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+
+    a {
+      color: #212326;
+      text-decoration: none;
+      font-size: 16px;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: #111827;
+      }
+
+      &:visited {
+        color: #212326;
+      }
+    }
   }
 }

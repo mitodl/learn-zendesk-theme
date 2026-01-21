@@ -39,7 +39,9 @@
               {{/each}}
             </ul>
             {{#if section.more_articles}}
-              <a href="{{section.url}}" class="article-sidebar-item">{{t 'see_more'}}</a>
+              <a href="{{section.url}}" class="article-sidebar-see-all">
+                {{t 'show_all_articles' count=section.article_count}}
+              </a>
             {{/if}}
           </div>
         </div>
@@ -69,20 +71,20 @@
               <img src="{{article.author.avatar_url}}" alt="" class="user-avatar"/>
             </div>
           {{/if}}
-          <div class="article-meta">
+        <div class="article-meta">
             {{#if settings.show_article_author}}
               {{#link 'user_profile' id=article.author.id}}
                 {{article.author.name}}
               {{/link}}
             {{/if}}
 
-            <div class="meta-group">
-              {{#is article.created_at article.edited_at}}
-                <span class="meta-data">{{date article.created_at timeago=true}}</span>
-              {{else}}
-                <span class="meta-data">{{date article.edited_at timeago=true}}</span>
-                <span class="meta-data">{{t 'updated'}}</span>
-              {{/is}}
+          <div class="meta-group">
+            {{#is article.created_at article.edited_at}}
+              <span class="meta-data">{{date article.created_at timeago=true}}</span>
+            {{else}}
+              <span class="meta-data">{{date article.edited_at timeago=true}}</span>
+              <span class="meta-data">{{t 'updated'}}</span>
+            {{/is}}
             </div>
           </div>
         </div>
