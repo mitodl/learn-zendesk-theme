@@ -50,14 +50,33 @@
 
   <div class="nav-wrapper-mobile">
     <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
-      {{#if signed_in}}
-        {{user_avatar class="user-avatar"}}
-      {{/if}}
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
         <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
       </svg>
     </button>
-    <img src="{{settings.logo-sm}}" class="mit-logo-right" alt="MIT" />
+    <a href="{{settings.learn_link}}" class="learn-link-mobile">
+      <img src="{{settings.logo}}" class="site-logo-mobile" />
+    </a>
+    <div class="mobile-header-icons">
+      <button class="search-icon-mobile" aria-label="{{t 'search'}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
+          <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+          <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+        </svg>
+      </button>
+      {{#if signed_in}}
+        <button class="user-icon-mobile" aria-label="{{t 'user_menu'}}">
+          {{user_avatar class="user-avatar-mobile"}}
+        </button>
+      {{else}}
+        <a href="{{link 'sign_in'}}" class="user-icon-mobile" aria-label="{{t 'sign_in'}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
+            <path fill="none" stroke="currentColor" d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z"/>
+          </svg>
+        </a>
+      {{/if}}
+      <img src="{{settings.logo-sm}}" class="mit-logo-right-mobile" alt="MIT" />
+    </div>
     <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
       <ul class="menu-list-mobile-items">
         {{#if signed_in}}

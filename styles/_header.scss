@@ -15,6 +15,10 @@ $header-bg: #303337;
   margin: 0;
   box-sizing: border-box;
   z-index: 100;
+
+  @include mobile {
+    padding: 0 16px;
+  }
 }
 
 .header-left {
@@ -22,6 +26,10 @@ $header-bg: #303337;
   align-items: flex-end;
   gap: 24px;
   flex-shrink: 0;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .logo {
@@ -55,6 +63,10 @@ $header-bg: #303337;
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
+
+  @include mobile {
+    display: none;
+  }
   
   &:hover, &:focus, &:active, &:visited {
     color: white !important;
@@ -254,6 +266,8 @@ $header-bg: #303337;
   @include desktop { display: none; }
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 12px;
 
   .menu-button-mobile {
@@ -264,13 +278,13 @@ $header-bg: #303337;
     cursor: pointer;
     color: #FFFFFF;
     padding: 8px;
+    flex-shrink: 0;
 
     .icon-menu {
-      padding: 7px;
-      vertical-align: middle;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       stroke: currentColor;
+      stroke-width: 2;
     }
 
     &[aria-expanded="true"] {
@@ -279,19 +293,82 @@ $header-bg: #303337;
       }
     }
   }
+
+  .learn-link-mobile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-left: 8px;
+
+    .site-logo-mobile {
+      max-height: 24px;
+      height: auto;
+      width: auto;
+      display: block;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+  }
+
+  .mobile-header-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .search-icon-mobile,
+  .user-icon-mobile {
+    background: none;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    &:hover, &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  .user-icon-mobile {
+    text-decoration: none;
+
+    .user-avatar-mobile {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+  }
   
-  .mit-logo-right {
+  .mit-logo-right-mobile {
     height: 24px;
     width: auto;
     display: block;
+    flex-shrink: 0;
   }
 
   .menu-list-mobile {
     position: absolute;
-    background-color: #fff;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .15);
-    border-top: solid 1px #ddd;
-    border-bottom: solid 1px #ddd;
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
     right: 0;
     left: 0;
     top: $header-height;
@@ -317,8 +394,9 @@ $header-bg: #303337;
     }
 
     .nav-divider {
-      border-bottom: 0.1px solid #ddd;
+      border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
       padding: 0;
+      margin: 8px 0;
 
       &:last-child {
         display: none;
@@ -332,13 +410,15 @@ $header-bg: #303337;
 
       width: 100%;
       height: 100%;
-      color: $text_color;
+      color: rgba(255, 255, 255, 0.7);
       cursor: pointer;
       text-align: start;
+      font-size: 14px;
 
       &:active, &:focus, &:hover {
-        background-color: #f3f3f3;
-        text-decoration: underline;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #FFFFFF;
+        text-decoration: none;
       }
     }
 
@@ -347,20 +427,50 @@ $header-bg: #303337;
       padding: 8px 24px;
       width: 100%;
       height: 100%;
-      color: $text_color;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 14px;
 
       &:active, &:focus, &:hover {
-        background-color: #f3f3f3;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #FFFFFF;
+      }
+
+      &:visited {
+        color: rgba(255, 255, 255, 0.7);
       }
     }
 
     .my-profile {
       display: flex;
       line-height: 1.5;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+
+      .menu-profile-name {
+        color: rgba(255, 255, 255, 0.7);
+
+        div:first-child {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
 
       .my-profile-tooltip {
         font-size: 12px;
-        color: #68737D;
+        color: #FFFFFF;
+        margin-top: 2px;
+      }
+
+      &:hover, &:focus {
+        color: #FFFFFF;
+
+        .menu-profile-name {
+          color: #FFFFFF;
+
+          div:first-child {
+            color: #FFFFFF;
+          }
+        }
       }
     }
 
