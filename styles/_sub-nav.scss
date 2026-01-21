@@ -24,6 +24,14 @@
   .breadcrumbs {
     margin: 0;
     font-size: 14px;
+
+    @include mobile {
+      order: 2;
+    }
+
+    @include tablet {
+      order: 0;
+    }
     
     li:first-child a {
       color: #A31F34;
@@ -51,10 +59,12 @@
 
     @include mobile {
       max-width: 100%;
+      order: 1;
     }
 
     @include tablet {
       flex: 0 1 300px;
+      order: 0;
     }
   }
 

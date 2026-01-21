@@ -23,10 +23,23 @@
     margin-bottom: 20px;
     padding: 0;
 
+    @include mobile {
+      margin-bottom: 16px;
+      border-top: none;
+    }
+
     @include desktop {
       border: 0;
       flex: 0 0 20%;
       height: auto;
+    }
+
+    .type-filters-section {
+      @include mobile {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
     }
 
     .sidenav-item {
@@ -40,6 +53,12 @@
       border: 1px solid #B8C2CC;
       font-size: 16px;
       font-weight: 500;
+
+      @include mobile {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
 
       &:hover {
         background-color: transparent;
@@ -113,6 +132,37 @@
       display: none;
     }
 
+    // Type filters in a single row
+    .type-filters-section {
+      .multibrand-filter-list {
+        @include mobile {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          gap: 8px;
+        }
+
+        li {
+          @include mobile {
+            flex: 1;
+            min-width: 0;
+          }
+        }
+      }
+
+      .sidenav-item {
+        @include mobile {
+          display: block;
+          width: 100%;
+          margin-bottom: 0;
+          white-space: nowrap;
+          padding: 8px 16px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+    }
 
     .see-all-filters {
       background: none;
@@ -142,6 +192,11 @@
     font-weight: 700;
     margin-bottom: 24px;
     color: black;
+
+    @include mobile {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
   }
 
   &-list {
@@ -152,6 +207,10 @@
     > li {
       padding: 24px 0;
       border-bottom: 1px solid #E9EBED;
+      
+      @include mobile {
+        padding: 16px 0;
+      }
       
       &:first-child {
         border-top: 1px solid #E9EBED;
@@ -219,12 +278,25 @@
   &-title-container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 8px;
+    }
   }
 
   &-title {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 16px;
+    flex: 1;
+    
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
     
     a {
       color: #A31F34;
@@ -239,6 +311,16 @@
       &:visited {
         color: #A31F34;
       }
+    }
+  }
+
+  &-icons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+
+    @include mobile {
+      align-self: flex-start;
     }
   }
 
@@ -276,6 +358,11 @@
     gap: 8px;
     margin-bottom: 16px;
 
+    @include mobile {
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
     nav {
       @include desktop { flex: 1; }
     }
@@ -287,11 +374,21 @@
     flex-direction: row;
     gap: 24px;
     align-items: center;
+    flex-wrap: wrap;
+
+    @include mobile {
+      gap: 12px;
+      font-size: 12px;
+    }
     
     .meta-data {
       font-size: 14px;
       color: #626A73;
       margin: 0;
+      
+      @include mobile {
+        font-size: 12px;
+      }
       
       &::after {
         content: none;
@@ -303,6 +400,10 @@
     margin: 0;
     font-size: 14px;
     color: #626A73;
+
+    @include mobile {
+      font-size: 12px;
+    }
 
     li:first-child a {
       color: #A31F34;
@@ -329,6 +430,11 @@
     word-break: break-word;
     font-size: 14px;
     color: #212326;
+
+    @include mobile {
+      font-size: 13px;
+      line-height: 1.5;
+    }
   }
 }
 
