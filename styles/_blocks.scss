@@ -53,7 +53,7 @@
       border-color: $brand_color;
 
       * {
-        color: black;
+        color: $black-color;
         text-decoration: none;
       }
     }
@@ -99,7 +99,7 @@
     margin-bottom: 0;
     font-size: 18px;
     font-weight: 500;
-    color: black;
+    color: $black-color;
   }
 
   &-item-description {
