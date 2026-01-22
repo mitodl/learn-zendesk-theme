@@ -84,8 +84,8 @@
 .contact-cta {
   text-align: center;
   padding: 60px 20px 0 20px;
-  background: #FFFFFF;
-  border-top: 1px solid #DDE1E6;
+  background: $white-color;
+  border-top: 1px solid $light-gray-border;
 
   @include mobile {
     padding: 40px 20px 0 20px;
@@ -107,7 +107,7 @@
   &-title {
     font-size: 28px;
     font-weight: 700;
-    color: black;
+    color: $black-color;
     margin: 0;
 
     @include mobile {
@@ -120,8 +120,8 @@
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background-color: #750014;
-    color: #FFFFFF;
+    background-color: $brand-red-dark;
+    color: $white-color;
     text-decoration: none;
     border-radius: 24px;
     font-size: 16px;
@@ -134,13 +134,13 @@
     }
     
     &:visited {
-      color: #FFFFFF;
+      color: $white-color;
     }
     
     &:hover,
     &:focus {
-      background-color: #A00E26;
-      color: #FFFFFF;
+      background-color: $brand-red-darker;
+      color: $white-color;
       text-decoration: none;
     }
     
