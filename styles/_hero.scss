@@ -1,6 +1,6 @@
 /***** Hero component *****/
 .hero {
-  background-color: #F3F4F84D;
+  background-color: $light-gray-bg-hero-opacity;
   padding: 80px 200px;
   text-align: center;
   width: 100%;
@@ -27,7 +27,7 @@
       transform: translateX(-50%);
       width: 100vw;
       height: 100%;
-      background-color: #F3F4F84D;
+      background-color: $light-gray-bg-hero-opacity;
       z-index: 0;
     }
     
@@ -39,7 +39,7 @@
       transform: translateX(-50%);
       width: 100vw;
       height: 1px;
-      background-color: #DDE1E6;
+      background-color: $light-gray-border;
       z-index: 0;
     }
     
@@ -73,7 +73,7 @@
   &-title {
     font-size: 34px;
     font-weight: 700;
-    color: #212326;
+    color: $dark-text-color;
     margin: 0;
     line-height: 1.2;
 
@@ -85,7 +85,7 @@
   &-subtitle {
     font-size: 18px;
     font-weight: 500;
-    color: #212326;
+    color: $dark-text-color;
     margin: 0;
     line-height: 1.5;
 
