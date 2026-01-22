@@ -50,7 +50,7 @@
       color: $text_color;
       text-decoration: none;
       background-color: transparent;
-      border: 1px solid #B8C2CC;
+      border: 1px solid $medium-gray-border;
       font-size: 16px;
       font-weight: 500;
 
@@ -66,7 +66,7 @@
       }
 
       &.current {
-        background-color: #F3F4F8;
+        background-color: $light-gray-bg-hero;
         text-decoration: none;
         color: $text_color;
       }
@@ -83,7 +83,7 @@
       flex-grow: 0;
 
       .content-tag {
-        background: #E9EBED;
+        background: $light-gray-bg-tag;
         border-radius: 4px;
         padding: 4px 12px;
         text-decoration: none;
@@ -95,14 +95,14 @@
           line-height: 24px;
           text-align: center;
           letter-spacing: -0.000427656px;
-          color: #49545C;
+          color: $dark-gray-text;
           flex-grow: 0;
           vertical-align: middle;
           display: inline-block;
         }
 
         .close-icon {
-          color: #555555;
+          color: $gray-icon;
           vertical-align: middle;
           display: inline-block;
         }
@@ -123,7 +123,7 @@
     .sidenav-title {
       font-size: 24px;
       font-weight: 700;
-      color: black;
+      color: $black-color;
       margin-bottom: 16px;
       margin-top: 0;
     }
@@ -190,7 +190,7 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 24px;
-    color: black;
+    color: $black-color;
 
     @include mobile {
       font-size: 16px;
@@ -205,14 +205,14 @@
     
     > li {
       padding: 24px 0;
-      border-bottom: 1px solid #E9EBED;
+      border-bottom: 1px solid $light-gray-bg-tag;
       
       @include mobile {
         padding: 16px 0;
       }
       
       &:first-child {
-        border-top: 1px solid #E9EBED;
+        border-top: 1px solid $light-gray-bg-tag;
       }
       
       &:last-child {
@@ -227,7 +227,7 @@
     align-items: center;
     padding-top: 4rem;
     gap: 8px;
-    border: solid 1px #DDE1E6;
+    border: solid 1px $light-gray-border;
     border-radius: 8px;
     padding: 32px;
     margin-bottom: 56px;
@@ -240,7 +240,7 @@
     }
 
     .headline {
-      color: black;
+      color: $black-color;
       font-weight: 500;
       font-size: 16px;
       line-height: 24px;
@@ -248,7 +248,7 @@
     }
 
     .action-prompt {
-      color: #212326;
+      color: $dark-text-color;
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
@@ -265,7 +265,7 @@
 
     .help-center {
       margin-top: 16px;
-      border: solid 1px #B8C2CC;
+      border: solid 1px $medium-gray-border;
       border-radius: 24px;
       padding: 12px 24px;
       
@@ -298,17 +298,17 @@
     }
     
     a {
-      color: #A31F34;
+      color: $brand-red;
       text-decoration: none;
       
       &:hover,
       &:focus {
-        color: #750014;
+        color: $brand-red-dark;
         text-decoration: underline;
       }
       
       &:visited {
-        color: #A31F34;
+        color: $brand-red;
       }
     }
   }
@@ -328,12 +328,12 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #666666;
+    color: $field-text-color;
     font-size: 14px;
     font-weight: 400;
 
     &-icon {
-      color: #C41230;
+      color: $votes-icon-red;
       vertical-align: middle;
       width: 16px;
       height: 16px;
@@ -342,15 +342,15 @@
   }
   
   &-votes &-votes-icon {
-    color: #C41230;
+    color: $votes-icon-red;
   }
   
   &-meta-count &-meta-count-icon {
-    color: #999999;
+    color: $medium-gray-icon;
   }
 
   &-meta-container {
-    color: #626A73;
+    color: $medium-gray-text;
     font-weight: 400;
     display: flex;
     flex-direction: column;
@@ -382,7 +382,7 @@
     
     .meta-data {
       font-size: 14px;
-      color: #626A73;
+      color: $medium-gray-text;
       margin: 0;
       
       @include mobile {
@@ -398,14 +398,14 @@
   &-breadcrumbs {
     margin: 0;
     font-size: 14px;
-    color: #626A73;
+    color: $medium-gray-text;
 
     @include mobile {
       font-size: 12px;
     }
 
     li:first-child a {
-      color: #A31F34;
+      color: $brand-red;
       text-decoration: none;
 
       &:hover {
@@ -414,7 +414,7 @@
     }
 
     a {
-      color: #626A73;
+      color: $medium-gray-text;
       text-decoration: none;
       
       &:hover {
@@ -428,7 +428,7 @@
     margin-bottom: 0;
     word-break: break-word;
     font-size: 14px;
-    color: #212326;
+    color: $dark-text-color;
 
     @include mobile {
       font-size: 13px;
