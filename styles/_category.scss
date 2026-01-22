@@ -52,7 +52,7 @@
 .category-title {
   font-size: 34px;
   font-weight: 700;
-  color: #111827;
+  color: $darker-text-color;
   margin: 12px 0 0;
 
   @include mobile {
@@ -90,7 +90,7 @@
     }
 
     a {
-      color: #212326;
+      color: $dark-text-color;
       text-decoration: none;
 
       &:hover,
@@ -105,7 +105,7 @@
     align-items: center;
     padding: 8px 0 0;
     font-size: 16px;
-    color: #212326;
+    color: $dark-text-color;
     text-decoration: none;
 
     &::before {
@@ -131,13 +131,13 @@
     white-space: nowrap;
 
     a {
-      color: #212326;
+      color: $dark-text-color;
       text-decoration: none;
 
       &:hover,
       &:focus {
         text-decoration: underline;
-        color: #111827;
+        color: $darker-text-color;
       }
     }
   }
