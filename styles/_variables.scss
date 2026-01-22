@@ -2,8 +2,18 @@
 
 // Colors
 $black-color: #000;
+$white-color: #FFFFFF;
+$light-gray-bg: #f3f3f3;
+$light-gray-border: #DDE1E6;
+$header-bg: #303337;
 $hover-button-color: zass-darken($brand_color, 20%);
 $secondary-text-color: zass-lighten($text_color, 20%);
+
+$white-85-opacity: rgba(255, 255, 255, 0.85);
+$white-70-opacity: rgba(255, 255, 255, 0.7);
+$white-10-opacity: rgba(255, 255, 255, 0.1);
+$black-15-opacity: rgba(0, 0, 0, 0.15);
+$black-10-opacity: rgba(0, 0, 0, 0.1);
 
 $primary-shade: zass-darken($background_color, 3%); //#f8f8f8 for the default background_color
 $secondary-shade: zass-darken($background_color, 5%); //#f2f2f2 for the default background_color
