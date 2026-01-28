@@ -236,6 +236,11 @@ $header-height: 64px;
   transition: background-color 0.2s;
   white-space: nowrap;
   
+  &:visited {
+    color: $black-color;
+    text-decoration: none;
+  }
+  
   &:hover, &:focus, &:active {
     background-color: $light-gray-border;
     opacity: 0.8;
