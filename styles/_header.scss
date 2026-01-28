@@ -120,12 +120,12 @@ $header-height: 64px;
 }
 
 .nav-wrapper-desktop {
-  @include mobile { display: none; }
-  @include tablet { display: none; }
-  @include desktop { 
-    display: flex;
-    align-items: center;
+  @include mobile { 
+    display: none; 
   }
+  
+  display: flex;
+  align-items: center;
 }
 
 .header-right {
@@ -267,6 +267,7 @@ $header-height: 64px;
 }
 
 .nav-wrapper-mobile {
+  @include tablet { display: none; }
   @include desktop { display: none; }
   display: flex;
   align-items: center;
