@@ -85,13 +85,15 @@
         font-size: 13px;
       }
 
-      &:hover,
-      &:focus {
-        color: $brand-red;
-      }
-
       &:visited {
         color: $black-color;
+      }
+
+      &:hover,
+      &:focus,
+      &:visited:hover,
+      &:visited:focus {
+        color: $brand-red;
       }
     }
   }
