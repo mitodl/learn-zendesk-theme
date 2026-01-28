@@ -85,8 +85,9 @@
         font-size: 13px;
       }
 
-      &:hover, &:focus {
-        text-decoration: underline;
+      &:hover,
+      &:focus {
+        color: $brand-red;
       }
 
       &:visited {
