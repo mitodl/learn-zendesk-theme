@@ -186,13 +186,13 @@
   }
 
   &-subheading {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 24px;
     color: $black-color;
 
     @include mobile {
-      font-size: 16px;
+      font-size: 24px;
       margin-bottom: 16px;
     }
   }
