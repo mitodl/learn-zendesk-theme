@@ -271,13 +271,34 @@
       display: inline-block;
       overflow: hidden;
 
+      .help-center-link-desktop {
+        display: flex;
+      }
+
+      .help-center-link-mobile {
+        display: none;
+      }
+
+      @include mobile {
+        background-color: $white-color;
+        border: 1px solid $low-contrast-border-color;
+
+        .help-center-link-desktop {
+          display: none;
+        }
+
+        .help-center-link-mobile {
+          display: flex;
+        }
+      }
+
       a {
         color: $dark-text-color;
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 8px;
         padding: 12px 24px;
         border-radius: 23px;
         transition: background-color 0.2s ease, color 0.2s ease;
