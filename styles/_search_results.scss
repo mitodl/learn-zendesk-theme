@@ -135,16 +135,13 @@
     .type-filters-section {
       .multibrand-filter-list {
         @include mobile {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
           gap: 8px;
         }
 
         li {
           @include mobile {
-            flex: 1;
             min-width: 0;
           }
         }
@@ -159,6 +156,8 @@
           padding: 8px 16px;
           text-align: center;
           box-sizing: border-box;
+          font-size: 12px;
+          font-weight: 500;
         }
       }
     }
