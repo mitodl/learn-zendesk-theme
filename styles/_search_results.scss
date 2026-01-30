@@ -267,8 +267,33 @@
       margin-top: 16px;
       border: solid 1px $medium-gray-border;
       border-radius: 24px;
-      padding: 12px 24px;
-      
+      padding: 0;
+      display: inline-block;
+      overflow: hidden;
+
+      a {
+        color: $dark-text-color;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 12px 24px;
+        border-radius: 23px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:visited,
+        &:visited:hover,
+        &:visited:focus {
+          color: $dark-text-color;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: $light-gray-hover-bg;
+          color: $darker-text-color;
+        }
+      }
     }
   }
 }
