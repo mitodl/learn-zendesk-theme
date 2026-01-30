@@ -238,3 +238,33 @@ $padding-right: 20px;
     color: $medium-gray-border;
   }
 }
+
+.hero-search {
+  position: relative;
+
+  .search-icon {
+    position: absolute;
+    left: auto;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    color: $medium-gray-icon;
+    pointer-events: none;
+
+    @include mobile {
+      right: 16px;
+    }
+  }
+
+  .search input[type="search"] {
+    padding-left: 0px;
+    padding-right: 52px;
+
+    @include mobile {
+      padding-right: 48px;
+    }
+  }
+}
