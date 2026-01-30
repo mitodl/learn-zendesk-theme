@@ -48,12 +48,13 @@
 
     &:hover,
     &:focus,
+    &:focus-within,
     &:active {
       background-color: transparent;
-      border-color: $brand_color;
+      border-color: $brand-red;
 
       * {
-        color: $black-color;
+        color: $brand-red;
         text-decoration: none;
       }
     }
@@ -75,7 +76,7 @@
 
   &-item-link {
     color: $brand_color;
-    padding: 20px 30px;
+    padding: 25px 30px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -90,7 +91,8 @@
     }
     
     &:focus {
-      @include focus-ring;
+      outline: 0;
+      box-shadow: 0 0 0 3px $brand-red;
       text-decoration: none;
     }
   }
