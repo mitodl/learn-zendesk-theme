@@ -32,20 +32,39 @@
     @include tablet {
       order: 0;
     }
-    
+
     li:first-child a {
-      color: #A31F34;
+      color: $brand-red;
       text-decoration: none;
-      
+
       &:hover {
         text-decoration: underline;
       }
     }
 
-    a {
-      color: #626A73;
+    li:not(:first-child):not(:last-child) a {
+      color: $dark-text-color;
+      font-size: $font-size-bigger;
+      font-weight: 500;
       text-decoration: none;
-      
+
+      &:visited {
+        color: $dark-text-color;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    li:last-child a {
+      color: $medium-gray-text;
+      text-decoration: none;
+
+      &:visited {
+        color: $medium-gray-text;
+      }
+
       &:hover {
         text-decoration: underline;
       }
@@ -83,6 +102,6 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 1px;
-  background-color: #A31F34;
+  background-color: $brand-red;
   pointer-events: none;
 }
