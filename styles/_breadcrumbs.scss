@@ -18,9 +18,11 @@
     align-items: center;
 
     + li::before {
-      content: ">";
-      margin: 0 4px;
+      content: "›";
+      margin: 0 5px;
       flex-shrink: 0;
+      font-size: 1.15em;
+      line-height: 1;
     }
 
     a:visited {

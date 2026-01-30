@@ -404,19 +404,16 @@
       font-size: 12px;
     }
 
-    li:first-child a {
-      color: $brand-red;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    a {
+    li a {
       color: $medium-gray-text;
       text-decoration: none;
-      
+
+      &:visited,
+      &:visited:hover,
+      &:visited:focus {
+        color: $medium-gray-text;
+      }
+
       &:hover {
         text-decoration: underline;
       }
