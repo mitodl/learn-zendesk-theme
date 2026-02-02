@@ -182,18 +182,19 @@ $header-height: 64px;
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
+    width: 60%;
+    min-width: 100px;
     background-color: $header-bg;
     box-shadow: 0 4px 12px $black-15-opacity;
     border: none;
     border-radius: 4px;
-    min-width: 200px;
     z-index: 1000;
     display: none;
-    
+
     &[role="menu"] {
       padding: 0;
     }
-    
+
     a,
     button {
       display: block;
@@ -206,18 +207,23 @@ $header-height: 64px;
       border: none;
       background: none;
       cursor: pointer;
-      
+
       &:hover,
-      &:focus,
+      &:focus {
+        background: none;
+        color: $white-color;
+        text-decoration: underline;
+      }
+
       &.is-active,
       &[aria-current="page"],
       &[aria-selected="true"] {
-        background-color: $white-10-opacity;
+        background: none;
         color: $white-color;
         text-decoration: none;
       }
     }
-    
+
     .separator {
       display: none;
     }
