@@ -439,6 +439,39 @@
           "value": false
         }
       ]
+    },
+    {
+      "label": "footer_section_contents",
+      "variables": [
+        {
+          "identifier": "mit_home",
+          "type": "text",
+          "description": "mit_home_description",
+          "label": "mit_home_label",
+          "value": "https://learn.mit.edu/"
+        },
+        {
+          "identifier": "mit_about_us",
+          "type": "text",
+          "description": "mit_about_us_description",
+          "label": "mit_about_us_label",
+          "value": "https://learn.mit.edu/about"
+        },
+        {
+          "identifier": "mit_accessibility",
+          "type": "text",
+          "description": "mit_accessibility_description",
+          "label": "mit_accessibility_label",
+          "value": "https://accessibility.mit.edu/"
+        },
+        {
+          "identifier": "mit_tos",
+          "type": "text",
+          "description": "mit_tos_description",
+          "label": "mit_tos_label",
+          "value": "https://learn.mit.edu/terms"
+        }
+      ]
     }
   ]
 }
