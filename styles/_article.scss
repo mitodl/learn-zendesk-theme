@@ -353,12 +353,13 @@
     display: block;
     padding: 8px 0px;
     margin: 4px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
+    text-overflow: clip;
     color: $dark-text-color;
     text-decoration: none;
     border-radius: 4px 0 0 4px;
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
 
     @include mobile {
       padding: 6px 0;
