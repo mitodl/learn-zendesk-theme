@@ -130,6 +130,13 @@
     overflow: hidden;
     white-space: nowrap;
 
+    @include mobile {
+      text-overflow: clip;
+      overflow: visible;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+
     a {
       color: $dark-text-color;
       text-decoration: none;
