@@ -220,13 +220,13 @@
           "label": "logo_label"
         },
         {
-          "identifier": "logo-sm",
+          "identifier": "logo_sm",
           "type": "file",
           "description": "logo_sm_description",
           "label": "logo_sm_label"
         },
         {
-          "identifier": "logo-sm-black",
+          "identifier": "logo_sm_black",
           "type": "file",
           "description": "logo_sm_black_description",
           "label": "logo_sm_black_label"
