@@ -115,6 +115,11 @@
   &-body {
     @include content-body;
     font-size: 18px;
+    
+    @include mobile {
+      font-size: 14px;
+    }
+    
     > p:last-child {
       margin-bottom: 0;
     }
