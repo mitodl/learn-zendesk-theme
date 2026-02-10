@@ -30,6 +30,7 @@
       margin: 0;
     }
 
+    background-color: $white-color;
     border: 2px solid $low-contrast-border-color;
     border-radius: 8px;
     box-sizing: border-box;
@@ -50,7 +51,7 @@
     &:focus,
     &:focus-within,
     &:active {
-      background-color: transparent;
+      background-color: $white-color;
       border-color: $brand-red;
 
       * {
