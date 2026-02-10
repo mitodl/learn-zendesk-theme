@@ -53,3 +53,12 @@
 
   renderNewRequestForm(settings, props, container);
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var contactCta = document.querySelector('.contact-cta');
+    if (contactCta) {
+      contactCta.style.display = 'none';
+    }
+  });
+</script>
