@@ -290,6 +290,13 @@
           "type": "file",
           "description": "service_catalog_hero_image_description",
           "label": "service_catalog_hero_image_label"
+        },
+        {
+          "identifier": "open_bg_texture",
+          "type": "file",
+          "description": "open_bg_texture_description",
+          "label": "open_bg_texture_label",
+          "value": "open_bg_texture.jpg"
         }
       ]
     },

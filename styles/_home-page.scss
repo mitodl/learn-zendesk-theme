@@ -83,12 +83,21 @@
 /***** Contact CTA section *****/
 .contact-cta {
   text-align: center;
-  padding: 60px 20px 0 20px;
+  padding: 60px 20px 60px 20px;
+  margin-bottom: 0;
   background: $white-color;
   border-top: 1px solid $light-gray-border;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @include mobile {
-    padding: 40px 20px 0 20px;
+    padding: 40px 20px 40px 20px;
+  }
+  
+  &-homepage {
+    background-image: none !important;
   }
   
   &-content {

@@ -39,15 +39,15 @@
             {{link "sign_out" role="menuitem"}}
           </div>
         </div>
-        {{#link 'requests' class="dashboard-button"}}
+        <a href="https://learn.mit.edu/dashboard" class="dashboard-button">
           Dashboard
-        {{/link}}
+        </a>
       {{else}}
         {{#link "sign_in" class="sign-in" role="link"}}
           {{t 'sign_in'}}
         {{/link}}
       {{/if}}
-      <img src="{{settings.logo-sm}}" class="mit-logo-right" alt="MIT" />
+      <img src="{{settings.logo_sm}}" class="mit-logo-right" alt="MIT" />
     </div>
   </div>
 
@@ -81,7 +81,7 @@
           </svg>
         </a>
       {{/if}}
-      <img src="{{settings.logo-sm}}" class="mit-logo-right-mobile" alt="MIT" />
+      <img src="{{settings.logo_sm}}" class="mit-logo-right-mobile" alt="MIT" />
     </div>
     <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
       <ul class="menu-list-mobile-items">

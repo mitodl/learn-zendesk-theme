@@ -60,6 +60,8 @@
   "mit_tos_description": "URL for Terms of Service link in footer",
   "mit_tos_label": "Terms of Service URL",
   "logo_description": "Company logo",
+  "open_bg_texture_description": "Background texture for hero section and contact CTA",
+  "open_bg_texture_label": "Open Background Texture",
   "logo_label": "Logo",
   "logo_sm_description": "Small MIT logo for header",
   "logo_sm_label": "MIT Logo (Small)",

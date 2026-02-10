@@ -1,23 +1,24 @@
 <h1 class="visibility-hidden">{{ help_center.name }}</h1>
 
-<section id="main-content" class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <h1 class="hero-title">MIT Learn Support Center</h1>
-      <p class="hero-subtitle">How can we help you today?</p>
+<div class="hero-wrapper" style="{{#if settings.open_bg_texture}}background-image: url('{{settings.open_bg_texture}}');{{/if}}">
+  <section id="main-content" class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">MIT Learn Support Center</h1>
+        <p class="hero-subtitle">How can we help you today?</p>
+      </div>
+      <h2 class="visibility-hidden">{{ t 'search' }}</h2>
+      <div class="hero-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+          <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+          <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+        </svg>
+        {{search submit=false instant=settings.instant_search class='search search-full'}}
+      </div>
     </div>
-    <h2 class="visibility-hidden">{{ t 'search' }}</h2>
-    <div class="hero-search">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search submit=false instant=settings.instant_search class='search search-full'}}
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="container hero-container">
+  <div class="container hero-container">
   <section class="section knowledge-base">
     <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
     <section class="categories blocks">
@@ -67,4 +68,14 @@
       </section>
     {{/if}}
   </section>
+  </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var contactCta = document.querySelector('.contact-cta');
+    if (contactCta) {
+      contactCta.classList.add('contact-cta-homepage');
+    }
+  });
+</script>
