@@ -295,8 +295,7 @@
           "identifier": "open_bg_texture",
           "type": "file",
           "description": "open_bg_texture_description",
-          "label": "open_bg_texture_label",
-          "value": "open_bg_texture.jpg"
+          "label": "open_bg_texture_label"
         }
       ]
     },
