@@ -50,6 +50,10 @@
 
   &-author {
     margin-bottom: 10px;
+    
+    @include mobile {
+      margin-bottom: 0;
+    }
   }
 
   &-title {
@@ -93,7 +97,7 @@
     vertical-align: middle;
 
     @include mobile {
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
 
     .meta-group {
@@ -130,7 +134,7 @@
     word-wrap: break-word;
 
     @include mobile {
-      margin: 24px 0;
+      margin: 16px 0 24px 0;
     }
   }
 
