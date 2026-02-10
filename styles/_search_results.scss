@@ -442,22 +442,22 @@
 
   &-breadcrumbs {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     color: $medium-gray-text;
 
     @include mobile {
-      font-size: 12px;
+      font-size: 16px;
     }
 
     li a {
       color: $medium-gray-text;
       text-decoration: none;
 
-      &:visited,
-      &:visited:hover,
-      &:visited:focus {
-        color: $medium-gray-text;
-      }
+        &:visited,
+        &:visited:hover,
+        &:visited:focus {
+          color: $medium-gray-text;
+        }
 
       &:hover {
         text-decoration: underline;
