@@ -65,22 +65,22 @@
       text-decoration: none;
 
       &:hover {
+        color: $brand-red-light;
         text-decoration: underline;
-        font-size: 1.2em;
       }
     }
 
     li:not(:first-child):not(:last-child) a {
-      color: $dark-text-color;
-      font-size: $font-size-bigger;
+      color: $brand-red;
       font-weight: 500;
       text-decoration: none;
 
       &:visited {
-        color: $dark-text-color;
+        color: $brand-red;
       }
 
       &:hover {
+        color: $brand-red-light;
         text-decoration: underline;
       }
     }
