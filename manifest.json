@@ -255,6 +255,20 @@
           "description": "learn_link_description",
           "label": "learn_link_label",
           "value": "https://learn.mit.edu/"
+        },
+        {
+          "identifier": "dashboard_link",
+          "type": "text",
+          "description": "dashboard_link_description",
+          "label": "dashboard_link_label",
+          "value": "https://learn.mit.edu/dashboard"
+        },
+        {
+          "identifier": "show_user_info",
+          "type": "checkbox",
+          "description": "user_info_description",
+          "label": "user_info_label",
+          "value": false
         }
       ]
     },

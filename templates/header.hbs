@@ -14,39 +14,41 @@
 
   <div class="nav-wrapper-desktop">
     <div class="header-right">
-      {{#if signed_in}}
-        <div class="user-info dropdown">
-          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="user-avatar" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
-              <path d="M12 6.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 7.5c-2.33 0-4.5 1.17-5.5 3v1c0 .55.45 1 1 1h9c.55 0 1-.45 1-1v-1c-1-1.83-3.17-3-5.5-3z" fill="#303337"/>
-            </svg>
-            <span class="user-name">
-              {{user_name}}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+      {{#if settings.show_user_info}}
+        {{#if signed_in}}
+          <div class="user-info dropdown">
+            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" class="user-avatar" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+                <path d="M12 6.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 7.5c-2.33 0-4.5 1.17-5.5 3v1c0 .55.45 1 1 1h9c.55 0 1-.45 1-1v-1c-1-1.83-3.17-3-5.5-3z" fill="#303337"/>
               </svg>
-            </span>
-          </button>
-          <div class="dropdown-menu" role="menu">
-            {{#my_profile role="menuitem"}}{{t 'profile'}}{{/my_profile}}
-            {{link "requests" role="menuitem"}}
-            {{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}
-            {{link "approval_requests" role="menuitem"}}
-            {{contact_details role="menuitem"}}
-            {{change_password role="menuitem"}}
-            <div class="separator" role="separator"></div>
-            {{link "sign_out" role="menuitem"}}
+              <span class="user-name">
+                {{user_name}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              {{#my_profile role="menuitem"}}{{t 'profile'}}{{/my_profile}}
+              {{link "requests" role="menuitem"}}
+              {{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}
+              {{link "approval_requests" role="menuitem"}}
+              {{contact_details role="menuitem"}}
+              {{change_password role="menuitem"}}
+              <div class="separator" role="separator"></div>
+              {{link "sign_out" role="menuitem"}}
+            </div>
           </div>
-        </div>
-        <a href="https://learn.mit.edu/dashboard" class="dashboard-button">
-          Dashboard
-        </a>
-      {{else}}
-        {{#link "sign_in" class="sign-in" role="link"}}
-          {{t 'sign_in'}}
-        {{/link}}
+        {{else}}
+          {{#link "sign_in" class="sign-in" role="link"}}
+            {{t 'sign_in'}}
+          {{/link}}
+        {{/if}}
       {{/if}}
+      <a href="{{settings.dashboard_link}}" class="dashboard-button">
+        Dashboard
+      </a>
       <img src="{{settings.logo_sm}}" class="mit-logo-right" alt="MIT" />
     </div>
   </div>
@@ -67,49 +69,52 @@
           <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
         </svg>
       </button>
-      {{#if signed_in}}
-        <button class="user-icon-mobile" aria-label="{{t 'user_menu'}}">
-          <svg xmlns="http://www.w3.org/2000/svg" class="user-avatar-mobile" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
-            <path d="M12 6.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 7.5c-2.33 0-4.5 1.17-5.5 3v1c0 .55.45 1 1 1h9c.55 0 1-.45 1-1v-1c-1-1.83-3.17-3-5.5-3z" fill="#303337"/>
-          </svg>
-        </button>
-      {{else}}
-        <a href="{{link 'sign_in'}}" class="user-icon-mobile" aria-label="{{t 'sign_in'}}">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
-            <path fill="none" stroke="currentColor" d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z"/>
-          </svg>
-        </a>
+      {{#if settings.show_user_info}}
+        {{#if signed_in}}
+          <button class="user-icon-mobile" aria-label="{{t 'user_menu'}}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="user-avatar-mobile" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+              <path d="M12 6.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 7.5c-2.33 0-4.5 1.17-5.5 3v1c0 .55.45 1 1 1h9c.55 0 1-.45 1-1v-1c-1-1.83-3.17-3-5.5-3z" fill="#303337"/>
+            </svg>
+          </button>
+        {{else}}
+          <a href="{{link 'sign_in'}}" class="user-icon-mobile" aria-label="{{t 'sign_in'}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
+              <path fill="none" stroke="currentColor" d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z"/>
+            </svg>
+          </a>
+        {{/if}}
       {{/if}}
       <img src="{{settings.logo_sm}}" class="mit-logo-right-mobile" alt="MIT" />
     </div>
     <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
       <ul class="menu-list-mobile-items">
-        {{#if signed_in}}
-          <li class="user-avatar-item item">
-            {{#my_profile class="my-profile"}}
-              {{user_avatar class="menu-profile-avatar"}}
-              <div class="menu-profile-name">
-                <div>{{user_name}}</div>
-                <div class="my-profile-tooltip">{{t 'profile'}}</div>
-              </div>
-            {{/my_profile}}
-          </li>
-          <li class="item">{{link "requests"}}</li>
-          <li class="item">{{#link "contributions"}}{{t "activities"}}{{/link}}</li>
-          <li class="item">{{link "approval_requests"}}</li>
-          <li class="item">{{contact_details}}</li>
-          <li class="item">{{change_password class='change-password'}}</li>
-          <li class="nav-divider"></li>
-        {{else}}
-          <li class="item">
-            {{#link "sign_in" role="link"}}
-              {{t 'sign_in'}}
-            {{/link}}
-          </li>
-          <li class="nav-divider"></li>
+        {{#if settings.show_user_info}}
+          {{#if signed_in}}
+            <li class="user-avatar-item item">
+              {{#my_profile class="my-profile"}}
+                {{user_avatar class="menu-profile-avatar"}}
+                <div class="menu-profile-name">
+                  <div>{{user_name}}</div>
+                  <div class="my-profile-tooltip">{{t 'profile'}}</div>
+                </div>
+              {{/my_profile}}
+            </li>
+            <li class="item">{{link "requests"}}</li>
+            <li class="item">{{#link "contributions"}}{{t "activities"}}{{/link}}</li>
+            <li class="item">{{link "approval_requests"}}</li>
+            <li class="item">{{contact_details}}</li>
+            <li class="item">{{change_password class='change-password'}}</li>
+            <li class="nav-divider"></li>
+          {{else}}
+            <li class="item">
+              {{#link "sign_in" role="link"}}
+                {{t 'sign_in'}}
+              {{/link}}
+            </li>
+            <li class="nav-divider"></li>
+          {{/if}}
         {{/if}}
-        <li class="item">{{link 'community'}}</li>
         <li class="item">{{link 'new_request' class='submit-a-request'}}</li>
         <li class="item">{{link 'service_catalog'}}</li>
         <li class="nav-divider"></li>
