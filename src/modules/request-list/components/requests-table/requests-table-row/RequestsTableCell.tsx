@@ -179,12 +179,29 @@ The same applies for the description. */
   }
 
   if (identifier === "requester") {
-    const nameOrAlias = user?.alias === undefined ? user?.name : user?.alias;
+    const nameOrAlias = user?.alias || user?.name;
 
     return (
       <TruncatedTableCell identifier={identifier}>
         {nameOrAlias}
       </TruncatedTableCell>
+    );
+  }
+
+  if (identifier === "subject") {
+    const requestUrl = `/hc/requests/${id}`;
+
+    const navigateToRequestPage = (e: MouseEvent) => {
+      e.preventDefault();
+      location.assign(requestUrl);
+    };
+
+    return (
+      <Table.Cell role="rowheader" data-test-id={`table-cell-${identifier}`}>
+        <Subject href={requestUrl} onClick={navigateToRequestPage}>
+          <TruncatedText>{subject || description}</TruncatedText>
+        </Subject>
+      </Table.Cell>
     );
   }
 
@@ -197,23 +214,6 @@ The same applies for the description. */
   }
 
   switch (ticketField.type) {
-    case "subject": {
-      const requestUrl = `/hc/requests/${id}`;
-
-      const navigateToRequestPage = (e: MouseEvent) => {
-        e.preventDefault();
-        location.assign(requestUrl);
-      };
-
-      return (
-        <Table.Cell role="rowheader" data-test-id={`table-cell-${identifier}`}>
-          <Subject href={requestUrl} onClick={navigateToRequestPage}>
-            <TruncatedText>{subject || description}</TruncatedText>
-          </Subject>
-        </Table.Cell>
-      );
-    }
-
     case "priority":
       return (
         <TruncatedTableCell identifier={identifier}>
