@@ -1,8 +1,34 @@
 // Variables
 
 // Colors
+$black-color: #000;
+$white-color: #FFFFFF;
+$light-gray-bg: #f3f3f3;
+$light-gray-border: #DDE1E6;
+$light-gray-bg-hero: #F3F4F8;
+$light-gray-bg-hero-opacity: rgba(243, 244, 248, 0.3);
+$dark-text-color: #212326;
+$darker-text-color: #111827;
+$medium-gray-text: #626A73;
+$light-gray-hover-bg: #E5E7EB;
+$light-gray-bg-tag: #E9EBED;
+$dark-gray-text: #49545C;
+$gray-icon: #555555;
+$medium-gray-icon: #999999;
+$votes-icon-red: #C41230;
+$header-bg: #303337;
+$brand-red: #A31F34;
+$brand-red-light: #D02E44;
+$brand-red-dark: #750014;
+$brand-red-darker: #A00E26;
 $hover-button-color: zass-darken($brand_color, 20%);
 $secondary-text-color: zass-lighten($text_color, 20%);
+
+$white-85-opacity: rgba(255, 255, 255, 0.85);
+$white-70-opacity: rgba(255, 255, 255, 0.7);
+$white-10-opacity: rgba(255, 255, 255, 0.1);
+$black-15-opacity: rgba(0, 0, 0, 0.15);
+$black-10-opacity: rgba(0, 0, 0, 0.1);
 
 $primary-shade: zass-darken($background_color, 3%); //#f8f8f8 for the default background_color
 $secondary-shade: zass-darken($background_color, 5%); //#f2f2f2 for the default background_color
@@ -15,7 +41,9 @@ $font-size-smaller: 11px;
 
 $high-contrast-border-color: #848F99; // maintains a 3:1 contrast ratio with default background color (#FFF). Use for controls and inputs
 $low-contrast-border-color: #ddd; // less than 3:1 contrast ratio with default background color. Use for elements that do not require user interaction
+$medium-gray-border: #B8C2CC;
 $menu-border-color: #d8dcde;
+$search-box-shadow: rgba(120, 147, 172, 0.1);
 
 $button-color: $brand_color;
 
@@ -29,6 +57,8 @@ $desktop-width: 1024px;
 $max-width-container: 1160px;
 
 $font-weight-semibold: 600;
+
+$global-font: "Neue Haas Grotesk Text Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
 // Transitions
 $input-transition: border .12s ease-in-out;

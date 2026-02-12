@@ -220,6 +220,18 @@
           "label": "logo_label"
         },
         {
+          "identifier": "logo_sm",
+          "type": "file",
+          "description": "logo_sm_description",
+          "label": "logo_sm_label"
+        },
+        {
+          "identifier": "logo_sm_black",
+          "type": "file",
+          "description": "logo_sm_black_description",
+          "label": "logo_sm_black_label"
+        },
+        {
           "identifier": "show_brand_name",
           "type": "checkbox",
           "description": "show_brand_name_description",
@@ -231,6 +243,32 @@
           "type": "file",
           "description": "favicon_description",
           "label": "favicon_label"
+        }
+      ]
+    },
+    {
+      "label": "header_page_group_label",
+      "variables": [
+        {
+          "identifier": "learn_link",
+          "type": "text",
+          "description": "learn_link_description",
+          "label": "learn_link_label",
+          "value": "https://learn.mit.edu/"
+        },
+        {
+          "identifier": "dashboard_link",
+          "type": "text",
+          "description": "dashboard_link_description",
+          "label": "dashboard_link_label",
+          "value": "https://learn.mit.edu/dashboard"
+        },
+        {
+          "identifier": "show_user_info",
+          "type": "checkbox",
+          "description": "user_info_description",
+          "label": "user_info_label",
+          "value": false
         }
       ]
     },
@@ -256,10 +294,22 @@
           "label": "community_image_label"
         },
         {
+          "identifier": "search_empty_icon",
+          "type": "file",
+          "description": "search_empty_icon_description",
+          "label": "search_empty_icon_label"
+        },
+        {
           "identifier": "service_catalog_hero_image",
           "type": "file",
           "description": "service_catalog_hero_image_description",
           "label": "service_catalog_hero_image_label"
+        },
+        {
+          "identifier": "open_bg_texture",
+          "type": "file",
+          "description": "open_bg_texture_description",
+          "label": "open_bg_texture_label"
         }
       ]
     },
@@ -316,28 +366,28 @@
           "type": "checkbox",
           "description": "article_author_description",
           "label": "article_author_label",
-          "value": true
+          "value": false
         },
         {
           "identifier": "show_article_comments",
           "type": "checkbox",
           "description": "article_comments_description",
           "label": "article_comments_label",
-          "value": true
+          "value": false
         },
         {
           "identifier": "show_follow_article",
           "type": "checkbox",
           "description": "follow_article_description",
           "label": "follow_article_label",
-          "value": true
+          "value": false
         },
         {
           "identifier": "show_recently_viewed_articles",
           "type": "checkbox",
           "description": "recently_viewed_articles_description",
           "label": "recently_viewed_articles_label",
-          "value": true
+          "value": false
         },
         {
           "identifier": "show_related_articles",
@@ -351,7 +401,7 @@
           "type": "checkbox",
           "description": "article_sharing_description",
           "label": "article_sharing_label",
-          "value": true
+          "value": false
         }
       ]
     },
@@ -395,6 +445,51 @@
           "description": "follow_topic_description",
           "label": "follow_topic_label",
           "value": true
+        }
+      ]
+    },
+    {
+      "label": "request_list_group_label",
+      "variables": [
+        {
+          "identifier": "request_list_beta",
+          "type": "checkbox",
+          "description": "request_list_beta_description",
+          "label": "request_list_beta_label",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "footer_section_contents",
+      "variables": [
+        {
+          "identifier": "mit_home",
+          "type": "text",
+          "description": "mit_home_description",
+          "label": "mit_home_label",
+          "value": "https://learn.mit.edu/"
+        },
+        {
+          "identifier": "mit_about_us",
+          "type": "text",
+          "description": "mit_about_us_description",
+          "label": "mit_about_us_label",
+          "value": "https://learn.mit.edu/about"
+        },
+        {
+          "identifier": "mit_accessibility",
+          "type": "text",
+          "description": "mit_accessibility_description",
+          "label": "mit_accessibility_label",
+          "value": "https://accessibility.mit.edu/"
+        },
+        {
+          "identifier": "mit_tos",
+          "type": "text",
+          "description": "mit_tos_description",
+          "label": "mit_tos_label",
+          "value": "https://learn.mit.edu/terms"
         }
       ]
     }

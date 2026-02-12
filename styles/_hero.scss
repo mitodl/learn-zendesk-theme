@@ -1,16 +1,97 @@
 /***** Hero component *****/
-.hero {
-  background-image: url($homepage_background_image);
-  background-position: center;
+.hero-wrapper {
+  background-color: $light-gray-bg-hero-opacity;
   background-size: cover;
-  height: 300px;
-  padding: 0 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero {
+  padding: 80px 200px;
   text-align: center;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: 40px 20px;
+  }
+
+  &-container {
+    position: relative;
+    padding-bottom: 80px;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 1px;
+      background-color: $light-gray-border;
+      z-index: 0;
+    }
+    
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
 
   &-inner {
-    @include vertical-align;
-    max-width: 610px;
+    max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @include mobile {
+      gap: 24px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  &-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: $dark-text-color;
+    margin: 0;
+    line-height: 1.2;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  
+  &-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: $dark-text-color;
+    margin: 0;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+  
+  &-search {
+    width: 100%;
+    max-width: 844px;
+    display: flex;
+    align-items: center;
   }
 }

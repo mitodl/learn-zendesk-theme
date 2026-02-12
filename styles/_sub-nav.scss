@@ -6,6 +6,16 @@
   gap: 15px 30px;
   justify-content: space-between;
   margin-bottom: 55px;
+  padding-bottom: 40px;
+  border-bottom: none;
+  position: relative;
+
+  @include mobile {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    gap: 12px;
+    flex-direction: column-reverse;
+  }
 
   @include tablet {
     flex-direction: row;
@@ -14,6 +24,85 @@
   // Inner pages breadcrumbs
   .breadcrumbs {
     margin: 0;
+    font-size: 16px;
+    flex-wrap: wrap;
+
+    li {
+      max-width: none;
+      overflow: visible;
+      text-overflow: clip;
+      font-size: 16px;
+      
+      &:last-child a:hover {
+        text-decoration: none;
+      }
+    }
+
+    li a {
+      white-space: nowrap;
+    }
+
+    @include mobile {
+      order: 2;
+      font-size: 12px;
+
+      li {
+        font-size: 12px;
+      }
+
+      li a,
+      li:not(:first-child):not(:last-child) a {
+        font-size: 12px;
+      }
+    }
+
+    @include tablet {
+      order: 0;
+    }
+
+    li:first-child a {
+      color: $brand-red;
+      text-decoration: none;
+
+      &:hover {
+        color: $brand-red-light;
+        text-decoration: underline;
+      }
+    }
+
+    li:not(:first-child):not(:last-child) a {
+      color: $brand-red;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:visited {
+        color: $brand-red;
+      }
+
+      &:hover {
+        color: $brand-red-light;
+        text-decoration: underline;
+      }
+    }
+
+    li:last-child a {
+      color: $medium-gray-text;
+      text-decoration: none;
+
+      &:visited {
+        color: $medium-gray-text;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @include mobile {
+      li:not(:first-child):not(:last-child) a {
+        font-size: 12px;
+      }
+    }
   }
 
   // Inner pages search field
@@ -21,8 +110,14 @@
     max-width: 300px;
     width: 100%;
 
+    @include mobile {
+      max-width: 100%;
+      order: 1;
+    }
+
     @include tablet {
       flex: 0 1 300px;
+      order: 0;
     }
   }
 
@@ -31,4 +126,16 @@
       font-size: $font-size-base; 
     }
   }
+}
+
+.sub-nav::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: $brand-red;
+  pointer-events: none;
 }

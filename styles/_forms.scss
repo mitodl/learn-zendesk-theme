@@ -107,3 +107,20 @@
     a:visited { color: $visited_link_color; }
   }
 }
+
+.new-request-page {
+  padding-bottom: 48px;
+
+  #new-request-form button[type="submit"] {
+    background-color: $brand-red;
+    border-color: $brand-red;
+    color: $white-color !important;
+
+    &:hover,
+    &:focus {
+      background-color: $brand-red-dark;
+      border-color: $brand-red-dark;
+      color: $white-color !important;
+    }
+  }
+}

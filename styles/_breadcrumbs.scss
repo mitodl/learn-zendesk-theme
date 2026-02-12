@@ -10,18 +10,32 @@
 
   li {
     color: $secondary-text-color;
-    font-size: $font-size-small;
+    font-size: 16px;
     max-width: 450px;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
 
     + li::before {
-      content: ">";
-      margin: 0 4px;
+      content: "›";
+      margin: 0 5px;
+      flex-shrink: 0;
+      font-size: 16px;
+      line-height: 1;
     }
 
-    a:visited {
+    a {
       color: $link_color;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+      
+      &:visited {
+        color: $link_color;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <div class="container-divider"></div>
-<div class="container">
+<div class="container new-request-page">
   <div class="sub-nav">
     {{breadcrumbs}}
     <div class="search-container">
@@ -52,4 +52,13 @@
   };
 
   renderNewRequestForm(settings, props, container);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var contactCta = document.querySelector('.contact-cta');
+    if (contactCta) {
+      contactCta.style.display = 'none';
+    }
+  });
 </script>

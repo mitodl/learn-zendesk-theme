@@ -1,31 +1,82 @@
 /***** Header *****/
-$header-height: 71px;
+$header-height: 64px;
 
 .header {
-  @include max-width-container;
   position: relative;
   align-items: center;
   display: flex;
   height: $header-height;
   justify-content: space-between;
+  background-color: $header-bg !important;
+  padding: 0 32px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 100;
+
+  @include mobile {
+    height: 60px;
+    padding: 0 16px;
+  }
 }
 
-.logo img {
-  max-height: 37px;
-  vertical-align: middle;
+.header-left {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  flex-shrink: 0;
+
+  @include mobile {
+    display: none;
+  }
 }
 
-.logo span {
-  margin: 0 10px;
-  color: $brand_color;
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  
+  img {
+    max-height: 24px;
+    height: auto;
+    width: auto;
+    display: block;
+  }
+  
+  a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
 }
 
-.logo a {
-  display: inline-block;
-}
-
-.logo a:hover, .logo a:focus, .logo a:active {
+.support-center {
+  font-size: 14px;
+  color: $white-color !important;
   text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  @include mobile {
+    display: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $white-color !important;
+    text-decoration: none;
+  }
 }
 
 .user-nav {
@@ -35,9 +86,9 @@ $header-height: 71px;
   white-space: nowrap;
 
   &[aria-expanded="true"] {
-    background-color: #fff;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15), 0 4px 10px 0 rgba(0, 0, 0, .1);
-    border: solid 1px #ddd;
+    background-color: $white-color;
+    box-shadow: 0 0 4px 0 $black-15-opacity, 0 4px 10px 0 $black-10-opacity;
+    border: solid 1px $low-contrast-border-color;
     right: 0;
     left: 0;
     top: $header-height;
@@ -71,69 +122,309 @@ $header-height: 71px;
 }
 
 .nav-wrapper-desktop {
-  @include mobile { display: none; }
-  @include tablet { display: none; }
-  @include desktop { display: inline-block; }
+  @include mobile { 
+    display: none; 
+  }
+  
+  display: flex;
+  align-items: center;
+}
 
-  a {
-    @include tablet {
-      display: inline-block;
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid $light-gray-border;
+  border-radius: 4px;
+  
+  .dropdown-toggle {
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: $white-70-opacity;
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      opacity: 0.85;
     }
 
-    border: 0;
-    color: $link_color;
-    display: none;
-    font-size: 14px;
-    padding: 0 20px 0 0;
-    width: auto;
+    .user-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: inherit;
 
-    [dir="rtl"] & { padding: 0 0 0 20px;}
+      .dropdown-chevron-icon {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &[aria-expanded="true"] .dropdown-chevron-icon {
+      transform: rotate(180deg);
+    }
 
     &:hover,
-    &:focus,
-    &:active {
-      background-color: transparent;
-      color: $link_color;
-      text-decoration: underline;
+    &:focus {
+      color: $white-color;
+
+      .user-avatar {
+        opacity: 1;
+      }
     }
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: auto;
+    min-width: 180px;
+    background-color: $header-bg;
+    box-shadow: 0 4px 12px $black-15-opacity;
+    border: none;
+    border-radius: 4px;
+    z-index: 1000;
+    display: none;
+    white-space: nowrap;
+
+    &[role="menu"] {
+      padding: 0 0 4px 0;
+    }
+
+    a,
+    button {
+      display: block;
+      padding: 6px 16px;
+      color: $white-color;
+      text-decoration: none;
+      font-size: 14px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background: none;
+        color: $white-color;
+        text-decoration: underline;
+      }
+
+      &.is-active,
+      &[aria-current="page"],
+      &[aria-selected="true"] {
+        background: none;
+        color: $white-color;
+        text-decoration: none;
+      }
+    }
+
+    .separator {
+      display: none;
+    }
+  }
+  
+  &.dropdown[aria-expanded="true"] .dropdown-menu,
+  .dropdown-toggle[aria-expanded="true"] ~ .dropdown-menu {
+    display: block;
+  }
+}
+
+.dashboard-button {
+  background-color: $light-gray-border;
+  border: none;
+  border-radius: 4px;
+  padding: 13px 12px;
+  color: $black-color;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  
+  &:visited {
+    color: $black-color;
+    text-decoration: none;
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white-color;
+    text-decoration: none;
+  }
+}
+
+.mit-logo-right {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.sign-in {
+  background-color: $light-gray-border;
+  border: none;
+  border-radius: 4px;
+  padding: 13px 12px;
+  color: $black-color;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  
+  &:visited {
+    color: $black-color;
+    text-decoration: none;
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white-color;
+    text-decoration: none;
   }
 }
 
 .nav-wrapper-mobile {
+  @include tablet { display: none; }
   @include desktop { display: none; }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+  flex-wrap: nowrap;
 
   .menu-button-mobile {
     background: none;
     border: 0;
     width: auto;
-    min-width: 71px;
+    min-width: 40px;
     cursor: pointer;
+    color: $white-color;
+    padding: 8px;
+    flex-shrink: 0;
 
     .icon-menu {
-      padding: 7px;
-      vertical-align: middle;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2;
     }
 
     &[aria-expanded="true"] {
       .icon-menu {
-        background: #f3f3f3;
+        opacity: 0.8;
       }
     }
   }
 
+  .learn-link-mobile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-left: 8px;
+
+    .site-logo-mobile {
+      max-height: 16px;
+      height: 16px;
+      width: auto;
+      display: block;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+  }
+
+  .mobile-header-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .search-icon-mobile,
+  .user-icon-mobile {
+    background: none;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    &:hover, &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  .user-icon-mobile {
+    text-decoration: none;
+    padding: 0;
+
+    .user-avatar-mobile {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+  }
+  
+  .mit-logo-right-mobile {
+    height: 24px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+
   .menu-list-mobile {
     position: absolute;
-    background-color: #fff;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .15);
-    border-top: solid 1px #ddd;
-    border-bottom: solid 1px #ddd;
+    box-shadow: 0 10px 10px 0 $black-15-opacity;
+    border-top: solid 1px $white-10-opacity;
+    border-bottom: solid 1px $white-10-opacity;
     right: 0;
     left: 0;
     top: $header-height;
     z-index: 2;
+    background-color: $header-bg;
+
+    @include mobile {
+      top: 60px;
+    }
 
     &[aria-expanded="false"] {
       display: none;
@@ -154,8 +445,9 @@ $header-height: 71px;
     }
 
     .nav-divider {
-      border-bottom: 0.1px solid #ddd;
+      border-bottom: 0.1px solid $white-10-opacity;
       padding: 0;
+      margin: 8px 0;
 
       &:last-child {
         display: none;
@@ -169,13 +461,15 @@ $header-height: 71px;
 
       width: 100%;
       height: 100%;
-      color: $text_color;
+      color: $white-70-opacity;
       cursor: pointer;
       text-align: start;
+      font-size: 14px;
 
       &:active, &:focus, &:hover {
-        background-color: #f3f3f3;
-        text-decoration: underline;
+        background-color: $white-10-opacity;
+        color: $white-color;
+        text-decoration: none;
       }
     }
 
@@ -184,20 +478,50 @@ $header-height: 71px;
       padding: 8px 24px;
       width: 100%;
       height: 100%;
-      color: $text_color;
+      color: $white-70-opacity;
+      text-decoration: none;
+      font-size: 14px;
 
       &:active, &:focus, &:hover {
-        background-color: #f3f3f3;
+        background-color: $white-10-opacity;
+        color: $white-color;
+      }
+
+      &:visited {
+        color: $white-70-opacity;
       }
     }
 
     .my-profile {
       display: flex;
       line-height: 1.5;
+      color: $white-70-opacity;
+      text-decoration: none;
+
+      .menu-profile-name {
+        color: $white-70-opacity;
+
+        div:first-child {
+          color: $white-70-opacity;
+        }
+      }
 
       .my-profile-tooltip {
         font-size: 12px;
-        color: #68737D;
+        color: $white-color;
+        margin-top: 2px;
+      }
+
+      &:hover, &:focus {
+        color: $white-color;
+
+        .menu-profile-name {
+          color: $white-color;
+
+          div:first-child {
+            color: $white-color;
+          }
+        }
       }
     }
 
@@ -219,8 +543,8 @@ $header-height: 71px;
 
 .skip-navigation {
   align-items: center;
-  background-color: black;
-  color: white;
+  background-color: $black-color;
+  color: $white-color;
   display: flex;
   font-size: 14px;
   justify-content: center;
